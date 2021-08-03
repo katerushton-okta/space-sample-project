@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Photo Gallery Demo</title>
+  <link rel="stylesheet" href="../../css/odyssey.css">
+  <style>
+    html,
+    body {
+      width:100%;
+      height:100%;
+      overflow: hidden;
+    }
+    
+    .navbar {
+      position: absolute;
+      width:100%;
+      height:80px;
+      padding:8px 24px;
+      display: flex;
+      font-size:18px;
+      background: #00297A;
+      box-shadow: rgba(0,0,0,.25);
+      color:#fff;
+      justify-content: space-between;
+    }
+
+    .navbar .navbar-primary,.navbar .navbar-secondary {
+      display:flex;
+      align-items: center;
+    }
+
+    .navbar .navbar-primary {
+      font-weight: bold;
+    }
+
+    .navbar .navbar-primary img {
+      width:100px;
+      margin-right:24px;
+    }
+
+    main {
+      width: 100%;
+      height:calc(100% - 80px);
+      margin:0 auto;
+      position: relative;
+      top:80px;
+      padding:24px;
+      overflow:auto;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+
+    .cards .card {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 16px;
+    }
+
+    .search-box {
+      margin: 24px 0;
+    }
+
+  </style>
+
+  <script src="../../js/jquery-3.6.0.min.js"></script>
+  <script src="employees.js"></script>
+  <script>
+
+    $(document).ready(function(){
+
+      renderEmployeeGrid();
+
+      //when the user presses enter on the search button, redisplay the 
+      //grid view with only the matching employees
+      $('#search').on('keydown',function(e){
+          var val = $(this).val();
+
+          if (e.which == 13){
+            var keyword = $(this).val();
+            renderEmployeeGrid(keyword);
+          }
+      });
+
+      //render a grid view of employees
+      //the employees array is located in employees.js
+      function renderEmployeeGrid(keyword){
+
+        $('.cards').empty();
+
+        var added = 0;
+        //load the employees
+        for (var i = 0; i < employees.length; i++){
+
+          var employee = employees[i];
+
+          //if no keyword provided, always add. if keyword, check for a match with the name
+          if (!keyword || (keyword && employee.full_name.toLowerCase().indexOf(keyword.toLowerCase()) >= 0)){
+              addEmployeeCard(employee);
+              added++;
+          }
+        }
+
+        $('.nomatches').toggle(added == 0);
+      }
+
+      //render a single employee card
+      function addEmployeeCard(employee){
+
+        var img = $('<img>').attr('src', employee.profile_picture);
+        var title = $('<h3></h3>').text(employee.full_name);
+        var role = $('<div><div>' + employee.job_title + '</div><div>' + employee.department + '</div></div>');
+        var contact = $('<div><div><a href="#">' + employee.email + '</a></div><div>' + employee.phone + '</div></div>')
+        var cardinfo = $('<div class="info"></div>').append(role).append(contact);
+        var card = $('<div class="card"></div>').append(img).append(title).append(role).append(contact).append(cardinfo);
+        $('.cards').append(card);
+      }
+
+
+    });
+
+  </script>
+
+</head>
+<body>
+  
+  <div class="navbar">
+    <div class="navbar-primary">
+      <img src="ocorp.png">
+      <div class="title">employee directory</div>
+    </div>
+    <div class="navbar-secondary">
+      <p>Hello <span class="em">Jane Smith</span></p>
+    </div>
+  </div>
+  <main>
+    <div class="search-box">
+      <input class="ods-text-input" id="search" type="search" autocomplete="off" placeholder="Type a name and press enter to search">
+    </div>
+
+    <div class="cards">
+    </div>
+    <div class="nomatches">There are no employees matching your search.</div>
+  </main>
+</body>
+</body>
+</html>

@@ -1,0 +1,480 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Stencil Loading</title>
+  <link rel="stylesheet" href="../../css/odyssey.css">
+  <style>
+    body {
+      padding:48px;
+    }
+    .table-wrapper {
+      margin:24px 0;
+    }
+
+    .shimmer-bar {
+      width: 130px;
+      height: 12px;
+      border-radius: 8px;
+      background: #eee;
+    }
+
+    .shimmer {
+       animation: shimmer 2s infinite linear;
+       background: linear-gradient(to right, #eff1f3 4%, #e2e2e2 25%, #eff1f3 36%);
+       background-size: 1000px 100%;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -1000px 0;
+      }
+      100% {
+        background-position: 1000px 0;
+      }
+    }
+  </style>
+
+  <script src="../../js/jquery-3.6.0.min.js"></script>
+  <script>
+
+    $(document).ready(function(){
+        $('.loading-table').show();
+        $('.real-table').hide();
+        
+        setTimeout(function(){
+          $('.loading-table').hide();
+          $('.real-table').show();
+        },1500)
+
+    });
+
+  </script>
+
+</head>
+<body>
+  <h1>Public Universities in California</h1>
+  
+  <div class="table-wrapper">
+    <div class="stencil">
+      <table class="loading-table ods-table">
+      <thead>
+        <tr>
+          <th><div class="shimmer shimmer-bar"></div></th>
+          <th><div class="shimmer shimmer-bar"></div></th>
+          <th><div class="shimmer shimmer-bar"></div></th>
+          <th><div class="shimmer shimmer-bar"></div></th>
+          <th><div class="shimmer shimmer-bar"></div></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+        </tr>
+        <tr>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+        </tr><tr>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+        </tr><tr>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+        </tr><tr>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+        </tr>
+        <tr>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+        </tr><tr>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+        </tr><tr>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+        </tr><tr>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+        </tr><tr>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+        </tr><tr>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+        </tr><tr>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+        </tr><tr>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+        </tr><tr>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+        </tr><tr>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+        </tr><tr>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+        </tr><tr>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+        </tr><tr>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+        </tr><tr>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+        </tr><tr>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+        </tr><tr>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+        </tr><tr>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+        </tr><tr>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+          <td><div class="shimmer shimmer-bar"></div></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <table class="ods-table real-table">
+      <thead>
+        <tr><th>Name</th><th>City</th><th>County</th><th>Enrollment</th><th>Founded</th></tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td><a href="/wiki/California_State_University_Maritime_Academy" title="">California State University Maritime Academy</a>
+      </td>
+      <td><a href="/wiki/Vallejo,_California" title="Vallejo, California">Vallejo</a>
+      </td>
+      <td><a href="/wiki/Solano_County,_California" title="Solano County, California">Solano</a>
+      </td>
+      <td align="center">1,017
+      </td>
+      <td align="center">1929
+      </td></tr>
+      <tr>
+      <td><a href="/wiki/California_Polytechnic_State_University" class="mw-redirect" title="California State University Maritime Academy">California Polytechnic State University</a>
+      </td>
+      <td><a href="/wiki/San_Luis_Obispo,_California" title="San Luis Obispo, California">San Luis Obispo</a>
+      </td>
+      <td><a href="/wiki/San_Luis_Obispo_County,_California" title="San Luis Obispo County, California">San Luis Obispo</a>
+      </td>
+      <td align="center">21,812
+      </td>
+      <td align="center">1901
+      </td></tr>
+      <tr>
+      <td><a href="/wiki/California_State_Polytechnic_University,_Pomona" title="California State Polytechnic University, Pomona">California State Polytechnic University, Pomona</a>
+      </td>
+      <td><a href="/wiki/Pomona,_California" title="Pomona, California">Pomona</a>
+      </td>
+      <td><a href="/wiki/Los_Angeles_County,_California" title="Los Angeles County, California">Los Angeles</a>
+      </td>
+      <td align="center">26,443
+      </td>
+      <td align="center">1938
+      </td></tr>
+      <tr>
+      <td><a href="/wiki/California_State_University,_Bakersfield" title="California State University, Bakersfield">California State University, Bakersfield</a>
+      </td>
+      <td><a href="/wiki/Bakersfield,_California" title="Bakersfield, California">Bakersfield</a>
+      </td>
+      <td><a href="/wiki/Kern_County,_California" title="Kern County, California">Kern</a>
+      </td>
+      <td align="center">10,493
+      </td>
+      <td align="center">1965
+      </td></tr>
+      <tr>
+      <td><a href="/wiki/California_State_University_Channel_Islands" title="California State University Channel Islands">California State University Channel Islands</a>
+      </td>
+      <td><a href="/wiki/Camarillo,_California" title="Camarillo, California">Camarillo</a>
+      </td>
+      <td><a href="/wiki/Ventura_County,_California" title="Ventura County, California">Ventura</a>
+      </td>
+      <td align="center">7,095
+      </td>
+      <td align="center">2002
+      </td></tr>
+      <tr>
+      <td><a href="/wiki/California_State_University,_Chico" title="California State University, Chico">California State University, Chico</a>
+      </td>
+      <td><a href="/wiki/Chico,_California" title="Chico, California">Chico</a>
+      </td>
+      <td><a href="/wiki/Butte_County,_California" title="Butte County, California">Butte</a>
+      </td>
+      <td align="center">17,488
+      </td>
+      <td align="center">1887
+      </td></tr>
+      <tr>
+      <td><a href="/wiki/California_State_University,_Dominguez_Hills" title="California State University, Dominguez Hills">California State University, Dominguez Hills</a>
+      </td>
+      <td><a href="/wiki/Carson,_California" title="Carson, California">Carson</a>
+      </td>
+      <td><a href="/wiki/Los_Angeles_County,_California" title="Los Angeles County, California">Los Angeles</a>
+      </td>
+      <td align="center">15,741
+      </td>
+      <td align="center">1960
+      </td></tr>
+      <tr>
+      <td><a href="/wiki/California_State_University,_East_Bay" title="California State University, East Bay">California State University, East Bay</a>
+      </td>
+      <td><a href="/wiki/Hayward,_California" title="Hayward, California">Hayward</a>
+      </td>
+      <td><a href="/wiki/Alameda_County,_California" title="">Alameda</a>
+      </td>
+      <td align="center">14,525
+      </td>
+      <td align="center">1957
+      </td></tr>
+      <tr>
+      <td><a href="/wiki/California_State_University,_Fresno" title="California State University, Fresno">California State University, Fresno</a>
+      </td>
+      <td><a href="/wiki/Fresno,_California" title="Fresno, California">Fresno</a>
+      </td>
+      <td><a href="/wiki/Fresno_County,_California" title="Fresno County, California">Fresno</a>
+      </td>
+      <td align="center">24,995
+      </td>
+      <td align="center">1911
+      </td></tr>
+      <tr>
+      <td><a href="/wiki/California_State_University,_Fullerton" title="California State University, Fullerton">California State University, Fullerton</a>
+      </td>
+      <td><a href="/wiki/Fullerton,_California" title="Fullerton, California">Fullerton</a>
+      </td>
+      <td><a href="/wiki/Orange_County,_California" title="Orange County, California">Orange</a>
+      </td>
+      <td align="center">39,774
+      </td>
+      <td align="center">1957
+      </td></tr>
+      <tr>
+      <td><a href="/wiki/California_State_University,_Long_Beach" title="California State University, Long Beach">California State University, Long Beach</a>
+      </td>
+      <td><a href="/wiki/Long_Beach,_California" title="Long Beach, California">Long Beach</a>
+      </td>
+      <td><a href="/wiki/Los_Angeles_County,_California" title="Los Angeles County, California">Los Angeles</a>
+      </td>
+      <td align="center">36,846
+      </td>
+      <td align="center">1949
+      </td></tr>
+      <tr>
+      <td><a href="/wiki/California_State_University,_Los_Angeles" title="California State University, Los Angeles">California State University, Los Angeles</a>
+      </td>
+      <td><a href="/wiki/Los_Angeles" title="Los Angeles">Los Angeles</a>
+      </td>
+      <td><a href="/wiki/Los_Angeles_County,_California" title="Los Angeles County, California">Los Angeles</a>
+      </td>
+      <td align="center">27,685
+      </td>
+      <td align="center">1947
+      </td></tr>
+      <tr>
+      <td><a href="/wiki/California_State_University,_Monterey_Bay" title="California State University, Monterey Bay">California State University, Monterey Bay</a>
+      </td>
+      <td><a href="/wiki/Seaside,_California" title="Seaside, California">Seaside</a>-<a href="/wiki/Marina,_California" title="Marina, California">Marina</a>
+      </td>
+      <td><a href="/wiki/Monterey_County,_California" title="Monterey County, California">Monterey</a>
+      </td>
+      <td align="center">7,079
+      </td>
+      <td align="center">1994
+      </td></tr>
+      <tr>
+      <td><a href="/wiki/California_State_University,_Northridge" title="California State University, Northridge">California State University, Northridge</a>
+      </td>
+      <td><a href="/wiki/Northridge,_California" class="mw-redirect" title="Northridge, California">Northridge</a>
+      </td>
+      <td><a href="/wiki/Los_Angeles_County,_California" title="Los Angeles County, California">Los Angeles</a>
+      </td>
+      <td align="center">38,716
+      </td>
+      <td align="center">1958
+      </td></tr>
+      <tr>
+      <td><a href="/wiki/California_State_University,_Sacramento" title="California State University, Sacramento">California State University, Sacramento</a>
+      </td>
+      <td><a href="/wiki/Sacramento,_California" title="Sacramento, California">Sacramento</a>
+      </td>
+      <td><a href="/wiki/Sacramento_County,_California" title="Sacramento County, California">Sacramento</a>
+      </td>
+      <td align="center">31,131
+      </td>
+      <td align="center">1947
+      </td></tr>
+      <tr>
+      <td><a href="/wiki/California_State_University,_San_Bernardino" title="California State University, San Bernardino">California State University, San Bernardino</a>
+      </td>
+      <td><a href="/wiki/San_Bernardino,_California" title="San Bernardino, California">San Bernardino</a>
+      </td>
+      <td><a href="/wiki/San_Bernardino_County,_California" title="San Bernardino County, California">San Bernardino</a>
+      </td>
+      <td align="center">19,973
+      </td>
+      <td align="center">1965
+      </td></tr>
+      <tr>
+      <td><a href="/wiki/California_State_University_San_Marcos" title="California State University San Marcos">California State University San Marcos</a>
+      </td>
+      <td><a href="/wiki/San_Marcos,_California" title="San Marcos, California">San Marcos</a>
+      </td>
+      <td><a href="/wiki/San_Diego_County,_California" title="San Diego County, California">San Diego</a>
+      </td>
+      <td align="center">14,511
+      </td>
+      <td align="center">1988
+      </td></tr>
+      <tr>
+      <td><a href="/wiki/California_State_University,_Stanislaus" title="California State University, Stanislaus">California State University, Stanislaus</a>
+      </td>
+      <td><a href="/wiki/Turlock,_California" title="Turlock, California">Turlock</a>
+      </td>
+      <td><a href="/wiki/Stanislaus_County,_California" title="Stanislaus County, California">Stanislaus</a>
+      </td>
+      <td align="center">10,214
+      </td>
+      <td align="center">1957
+      </td></tr>
+      <tr>
+      <td><a href="/wiki/Humboldt_State_University" title="Humboldt State University">Humboldt State University</a>
+      </td>
+      <td><a href="/wiki/Arcata,_California" title="Arcata, California">Arcata</a>
+      </td>
+      <td><a href="/wiki/Humboldt_County,_California" title="Humboldt County, California">Humboldt</a>
+      </td>
+      <td align="center">7,774
+      </td>
+      <td align="center">1913
+      </td></tr>
+      <tr>
+      <td><a href="/wiki/San_Diego_State_University" title="San Diego State University">San Diego State University</a>
+      </td>
+      <td><a href="/wiki/San_Diego" title="San Diego">San Diego</a>
+      </td>
+      <td><a href="/wiki/San_Diego_County,_California" title="San Diego County, California">San Diego</a>
+      </td>
+      <td align="center">34,881
+      </td>
+      <td align="center">1897
+      </td></tr>
+      <tr>
+      <td><a href="/wiki/San_Francisco_State_University" title="San Francisco State University">San Francisco State University</a>
+      </td>
+      <td><a href="/wiki/San_Francisco" title="San Francisco">San Francisco</a>
+      </td>
+      <td><a href="/wiki/San_Francisco" title="San Francisco">San Francisco</a>
+      </td>
+      <td align="center">29,586
+      </td>
+      <td align="center">1899
+      </td></tr>
+      <tr>
+      <td><a href="/wiki/San_Jose_State_University" title="San Jose State University">San Jose State University</a>
+      </td>
+      <td><a href="/wiki/San_Jose,_California" title="San Jose, California">San Jose</a>
+      </td>
+      <td><a href="/wiki/Santa_Clara_County,_California" title="Santa Clara County, California">Santa Clara</a>
+      </td>
+      <td align="center">32,828
+      </td>
+      <td align="center">1857
+      </td></tr>
+      <tr>
+      <td><a href="/wiki/Sonoma_State_University" title="Sonoma State University">Sonoma State University</a>
+      </td>
+      <td><a href="/wiki/Rohnert_Park,_California" title="Rohnert Park, California">Rohnert Park</a>
+      </td>
+      <td><a href="/wiki/Sonoma_County,_California" title="Sonoma County, California">Sonoma</a>
+      </td>
+      <td align="center">9,201
+      </td>
+      <td align="center">1960
+      </td></tr>
+    </tbody>
+  </table>
+  </div>
+</body>
+</html>

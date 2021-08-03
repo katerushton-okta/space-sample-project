@@ -1,0 +1,194 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Blog Post Demo</title>
+  <link rel="stylesheet" href="../../css/odyssey.css">
+  <style>
+    body {
+      padding: 24px;
+      width: 1000px;
+      margin: 0 auto;
+    }
+    .submit-post-modal .ods-modal--content {
+      width: 400px;
+    }
+    .empty-state {
+      color: #666;
+      text-align: center;
+      font-size: 18px;
+      padding: 48px;
+    }
+    .blog-nav {
+      display: flex;
+      padding: 12px;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+    }
+    .post-area {
+      position: relative;
+    }
+    .posts {
+      margin: 24px 0;
+    }
+    .post {
+      margin-bottom: 24px;
+      padding: 16px;
+      border: 1px solid #ddd;
+      position: relative;
+    }
+    .remove-post-button {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+    }
+    .spinner {
+      display: none;
+      position: absolute;
+      background: rgba(255,255,255,.25);
+      left: 50%;
+      right: 50%;
+      top: 30px;
+      width: 36px;
+    }
+  </style>
+
+  <script src="../../js/jquery-3.6.0.min.js"></script>
+  <script>
+
+    $(document).ready(function(){
+
+      var posts = [];
+
+      $('.add-button').on('click',function(){
+        $('.submit-post-modal').show();
+      })
+
+      $('.cancel-button').on('click',function(){
+        $('.submit-post-modal').hide();
+      });
+
+      $('.create-button').on('click',function(){
+        
+        //$(this) refers to the element receiving event 
+        //we have to store a reference to it so that we can access it inside setTimout,
+        //as that has a different scope
+        var elem = $(this);
+
+        elem.attr('disabled','disabled');
+
+        //add the form data to the posts array
+        posts.push({
+          title: $('input[name="title"]').val(),
+          body: $('textarea[name="body"]').val()
+        });
+       
+        //add a slight pause after the submit button is clicked
+        //to simulate delay in server call
+        setTimeout(function(){
+          updatePostDisplay();
+          //reset the form and hide the modal
+          $('.blog-form')[0].reset();
+          $('.submit-post-modal').hide();
+          elem.removeAttr('disabled');
+          
+        },1000)
+        
+
+      
+      });
+
+      //because the remove post button is added dynamically,
+      // event handlers must be attached to a parent using this special syntax
+      $('.posts').on('click','.remove-post-button', function(){
+        var id = parseInt($(this).data('target'));
+        posts.splice(id,1);
+        updatePostDisplay();
+      });
+
+
+      //when new posts are added or removed from the global posts variable, 
+      //update the display of the post list
+
+      function updatePostDisplay() {
+
+        //clear out list of posts
+        $('.posts').empty();
+        $('.empty-state').hide();
+
+        if (posts.length > 0){
+
+         $.each(posts, function(index,post){
+            $('<div class="post"></div>')
+              .append('<h4 class="post-title">' + post.title + "</h4>")
+              .append('<div class="post-body">' + post.body + "</div>")
+              .append('<button type="button" class="remove-post-button" data-target="' + index + '">x</button>')
+              .appendTo('.posts');
+          });
+                       
+        } else {
+          $('.empty-state').show();
+        }
+      }
+    });
+
+  </script>
+
+</head>
+<body>
+  
+  <div class="blog-nav">
+      <h1>My Simple Blog</h1>
+      <button class="ods-button add-button" type="button">Add a Post</button>
+  </div>
+  <div class="post-area">
+    <div class="posts"></div>
+    <div class="empty-state">
+      <div class="empty-state">There are no posts to display.</div>
+    </div>
+    <div class="spinner">
+      <img src="../../images/spinner.gif">
+    </div>
+  </div>
+
+
+  <div class="ods-modal submit-post-modal">
+    <div class="ods-modal--overlay" tabindex="-1" data-micromodal-close>
+      <div class="ods-modal--dialog" role="dialog" aria-modal="true" aria-labelledby="ods-modal-standard-title">
+        <header class="ods-modal--header">
+          <button class="ods-modal--close cancel-button" aria-label="Close modal" data-micromodal-close></button>
+          <h1 class="ods-modal--title" id="ods-modal-standard-title">
+            Create a Post
+          </h1>
+        </header>
+        <main class="ods-modal--content" id="ods-modal-standard-content">
+            
+          <form class="blog-form" name="blog-form">
+            <fieldset class="ods-fieldset">
+              <div class="ods-fieldset-flex">
+                <input class="ods-text-input" placeholder="Title" type="text" name="title" id="title" spellcheck="false" required>
+                <label class="ods-label" for="title">Title</label>
+              </div>
+            </fieldset>
+            <fieldset class="ods-fieldset">
+              <div class="ods-fieldset-flex">
+                <textarea class="ods-text-input" name="body" placeholder="Share something..." id="body"></textarea>
+                <label class="ods-label" for="body">Body</label>
+              </div>
+            </fieldset>
+          </form>
+
+        </main>
+        <footer class="ods-modal--footer">
+          <button class="ods-button is-ods-button-clear cancel-button" data-micromodal-close aria-label="Close this dialog window">Cancel</button>
+          <button class="ods-button create-button">Create</button>
+        </footer>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Grid Demo</title>
+  <link rel="stylesheet" href="../../css/odyssey.css">
+  <link rel="stylesheet" href="../../css/slds-grid.css">
+  <style>
+    html,body {
+      overflow: hidden;
+      width:100%;
+      height:100%;
+    }
+
+    main,.content,.sidebar {
+      height:100%;
+    }
+
+    .sidebar {
+      border-right:1px solid #ddd;
+    }
+
+    .sidebar .slds-col {
+      height:100%;
+      background: #aaa;
+    }
+
+    .content .slds-col {
+      height:300px;
+      background: #eee;
+      border: 1px solid #fff;
+    }
+
+  </style>
+
+</head>
+<body>
+  <main class="slds-grid">
+    <div class="sidebar slds-col slds-size_1-of-4 slds-grid-vertical slds-grid_align-spread">
+      <div class="slds-col">
+      </div>
+    </div>
+    <div class="content slds-col slds-size_3-of-4">
+      <div class="slds-grid">
+        <div class="slds-col slds-size_1-of-3">
+        </div>
+        <div class="slds-col slds-size_1-of-3">
+        </div>
+        <div class="slds-col slds-size_1-of-3">
+        </div>
+      </div>
+      <div class="slds-grid">
+        <div class="slds-col slds-size_1-of-2">
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+        </div>
+      </div>
+      <div class="slds-grid">
+        <div class="slds-col slds-size_5-of-12">
+        </div>
+        <div class="slds-col slds-size_3-of-12">
+        </div>
+        <div class="slds-col slds-size_4-of-12">
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

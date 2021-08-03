@@ -1,0 +1,81 @@
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Space Flight Prototype</title>
+  <link rel="stylesheet" href="css/odyssey.css">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    #registration-modal {
+      display: block;
+    }
+    #registration-modal .ods-modal--dialog {
+      width: 500px;
+    }
+  </style>
+
+</head>
+<body>
+<div class="ods-modal" id="registration-modal">
+  <div class="ods-modal--overlay" tabindex="-1" data-micromodal-close>
+    <div class="ods-modal--dialog" role="dialog" aria-modal="true" aria-labelledby="ods-modal-standard-title">
+      <header class="ods-modal--header">
+        <button class="ods-modal--close close" aria-label="Close modal" data-micromodal-close></button>
+        <h1 class="ods-modal--title" id="ods-modal-standard-title">
+          Book Space Flight
+        </h1>
+      </header>
+      <main class="ods-modal--content" id="ods-modal-standard-content">
+        
+        <form name="booking">
+
+          <fieldset class="ods-fieldset">
+            <div class="ods-fieldset-flex">
+              <select class="ods-select" id="destination" name="destination" required>
+                <option value="saturn">Saturn</option>
+                <option value="jupiter">Jupiter</option>
+                <option value="mars">Mars</option>
+                <option value="neptune">Neptune</option>
+                <option value="alphacentauri">Alpha Centauri</option>
+                <option value="moon">Moon</option>
+                <option value="milkyway">Milky Way Galaxy</option>
+                <option value="andromeda">Andromeda Galaxy</option>
+                <option value="pluto">Pluto</option>
+              </select>      
+              <label class="ods-label" for="destination">Destination</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="ods-fieldset">
+            <div class="ods-fieldset-flex">
+              <select class="ods-select" id="time" name="time" required>
+               <option value="9:00">09:00</option>
+               <option value="14:00">14:00</option>
+               <option value="23:00">23:00</option>
+              </select>      
+              <label class="ods-label" for="time">Departure Time</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="ods-fieldset">
+            <div class="ods-fieldset-flex">
+              <input class="ods-text-input" type="text" name="passenger-name" id="passenger-name" spellcheck="false" placeholder="Passenger Name" required autocomplete="off">
+              <label class="ods-label" for="passenger-">Name</label>
+            </div>
+          </fieldset>
+
+          
+        </form>
+
+      </main>
+      <footer class="ods-modal--footer">
+        <button class="ods-button is-ods-button-clear close" data-micromodal-close aria-label="Close this dialog window">Cancel</button>
+        <button class="ods-button">Book</button>
+      </footer>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Drag and Drop Demo</title>
+  <link rel="stylesheet" href="../../css/odyssey.css">
+  <style>
+    body {
+      padding: 24px;
+    }
+
+    main {
+      width: 1000px;
+      margin: 0 auto;
+    }
+
+    .lists {
+      display: flex;
+    }
+
+    .draggable {
+      background: #eee;
+      color: #333;
+      font-weight:bold;
+    }
+
+    .droptarget {
+      width: 300px;
+      height: 300px;
+      border: 1px solid #aaa;
+      margin-right: 16px;
+    }
+  </style>
+  <script>
+
+    function onDragStart(e){
+      //specifies what should be passed from the dragged to the dropped element
+      //in this case it's the ID
+      e.dataTransfer.setData("id", e.target.id);
+    }
+
+    function onDragOver(e) {
+      e.preventDefault();
+    }
+
+    function onDrop(e) {
+      e.preventDefault();
+
+      //get the data that was passed
+      var id = e.dataTransfer.getData("id");
+
+      //moves the element into the target div
+      e.target.appendChild(document.getElementById(id));
+    }
+</script>
+
+</head>
+<body>
+    <main>
+      <p>Drag and drop between the two lists</p>
+      <div class="lists">
+
+        <div ondrop="onDrop(event)" class="droptarget" ondragover="onDragOver(event)">
+          <div draggable="true" class="draggable" id="box1" ondragstart="onDragStart(event)">
+          Item 1
+          </div>
+
+          <div draggable="true" class="draggable" id="box2" ondragstart="onDragStart(event)">
+            Item 2
+          </div>
+        </div>
+
+        <div ondrop="onDrop(event)" class="droptarget" ondragover="onDragOver(event)"></div>
+
+      </div>
+    </main>
+</body>
+</html>
